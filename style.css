@@ -1,0 +1,286 @@
+/*main navbar*/
+.main-navbar{
+	height: 70px;
+	z-index: 1;
+}
+
+.main-navbar .dropdown .dropdown-toggle::after,
+.main-navbar .dropdown .dropdown-toggle:hover::after{
+	content: '';
+	display: none;
+}
+.main-navbar .nav-link{
+	color: #fff !important;
+	text-shadow: .5px .5px .5px rgba(0,0,0,.3);
+}
+.main-navbar .nav-link::after{
+	content: '';
+	display: block;
+	padding-bottom: 5px;
+	border-bottom: 3px solid #007BFF;
+	margin-top: -3px;
+	width:0px;
+	transition: .5s;
+}
+.main-navbar .nav-link:hover::after{
+	content: '';
+	display: block;
+	padding-bottom: 5px;
+	border-bottom: 3px solid #007BFF;
+	margin-top: -3px;
+	width: 100%;
+}
+/*end main navbar*/
+
+
+/*info panel*/
+.info-panel{
+	background:url('../foto/bg3.png');
+	background-size: cover;
+}
+/*end info panel*/
+
+
+/*berita panel*/
+.berita-panel{
+	background:url('../foto/bg1.png');
+	background-size: contain;
+}
+/*end berita panel*/
+
+
+/*social navbar*/
+.social-navbar{
+	height: 30px;
+}
+/*end social navbar*/
+
+
+
+/*galery foto*/	
+.galery-foto{
+	
+}
+
+.img-galery{
+	position: relative;
+	margin: 2px 0;
+}
+.img-galery .img-item{
+	margin-top: 0;
+	margin-left: 0;
+	transition: 1s;
+	height: 150px;
+	width: 100%;
+}
+
+.img-galery span{
+	position: absolute;
+	display: block;
+	bottom: 0;
+	top:0;
+	right: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.7);
+	opacity: 0;
+	transition: .5s;
+	line-height: 150px;
+}
+
+.galery-foto span:hover{
+	opacity: 1;
+}
+
+.overlay{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.2);
+	z-index: 99999;
+	transition: 0.5s;
+	padding : 100px 0;
+}
+
+.overlay:target{
+	width: auto;
+	height: auto;
+	background-color: rgba(0,0,0,0.7);
+	bottom: 0;
+	right: 0;
+}
+
+.overlay img{
+	height: 500px;
+	width: 700px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 7px rgba(0,0,0,0.5);
+}
+
+.overlay:target img{
+	animation: fadeZoom .6s;
+}
+
+.overlay .close{
+	position: absolute;
+	top: 50px; 
+	left: 50%;
+	margin-left: -50px;
+	color: #fff;
+	opacity: 0;
+}
+
+.overlay:target .close{
+	animation: slideDownFade .5s .3s forwards;
+}
+/*end galery foto*/
+
+
+/*footer*/
+footer{
+	margin-top: 90px;
+	background-color: #555 !important;
+	padding: 20px 0;
+	color: white;
+	height:;
+	background: url('../foto/worldmap.png');
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: right;
+	overflow: auto;
+}
+
+/*kategori*/
+.kategori .card{
+	margin-bottom: 2px;
+}
+/*end kategori*/
+
+footer .alamat{
+	border: 3px solid rgba(255,255,255,.4);
+	padding:20px;
+
+}
+
+/*end footer*/
+
+/*custom*/
+
+/*btn*/
+.btn-outline-light:hover{
+	color: #333 !important;
+	opacity: 0.8;
+}
+/*end btn*/
+
+/*dropdown*/
+.dropdown-menu{
+	background-color: rgba(0,0,0,.7);
+}
+.dropdown-menu a{
+	color: #fff;
+}
+.dropdown-menu a:hover{
+	background-color: transparent;
+	color: #fff;
+}
+.dropdown-menu a::after{
+	content: '';
+	display: block;
+	border-bottom:  3px solid #007BFF;
+	margin-top: -3px;
+	width:0px;
+	transition: .5s;
+}
+.dropdown-menu a:hover::after{
+	content: '';
+	display: block;
+	border-bottom: 3px solid #007BFF;
+	margin-top: -3px;
+	width: 100%;
+}
+/*end dropdown*/
+
+
+/*end custom*/
+
+
+/*utilities*/
+.tombol{
+	color: #fff !important;
+	border-radius: 40px;
+}
+.transparan{
+	background-color: rgba(0,0,0,0.7) !important;
+}
+
+.padding-nav{
+	padding-top: 70px;
+}
+/*end utilities*/
+
+
+
+/*Tab and mobile version*/
+@media(max-width: 990px){
+	/*main-navbar*/
+	.main-navbar{
+		position: relative;
+	}
+	.main-navbar .navbar-collapse{
+		padding: 10px;
+		background-color: rgba(52, 58, 64, 1);
+		position: absolute;
+		top: 70px;
+		right: 0;
+		left: 0;
+	}
+	.main-navbar .mr-auto{
+		padding: 10px;
+	}
+	/*end main navbar*/
+
+	/*footer*/
+	footer{
+		background-position: bottom;
+	}
+	/*end footer*/
+
+	/*utilities*/
+	.padding-nav{
+		padding-top: 0;
+	}
+	/*endutolidties*/
+}
+/*end tab and mobile version*/
+
+
+/*animasi*/
+
+@keyframes fadeZoom {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes slideDownFade {
+	0% {
+		opacity: 0;
+		margin-top: -20px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+
+ul li{
+	margin-left :-20px;
+}
